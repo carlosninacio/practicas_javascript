@@ -160,9 +160,19 @@ if (isNaN(edadParseada)) {
     console.log(resultado);
 }
 
+
+// Incrementos y decrementos
 x=5;
 y=10;
 z= ++x + y--
 console.log(x);
 console.log(y);
 console.log(z);
+
+// Ejercicios de jerarquia de operadores
+
+resultado = 4 + 5 * 6 / 3;
+console.log(resultado);
+
+resultado = (4 + 5) * 6 / 3;
+console.log(resultado);
