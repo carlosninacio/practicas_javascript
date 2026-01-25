@@ -9,10 +9,12 @@ miFuncion(2,3);
 
 function miFuncion1(a,b) {
     console.log(arguments.length);
-    return a + b;
+    console.log(arguments[0]);
+    console.log(arguments[1]);
+    return a + b + arguments[2];
 }
 
-let resultado = miFuncion1(2,3);
+let resultado = miFuncion1(2,3,1);
 console.log(resultado);
 
 // Declaración función de tipo expresion
@@ -34,3 +36,14 @@ console.log(miFuncionTexto);
 const sumarFuncionTipoFlecha = (a,b) => a+b;
 resultado = sumarFuncionTipoFlecha(3,5);
 console.log(resultado);
+
+let resultadoTodo = sumarTodo(5, 4, 13, 10, 9);
+console.log(resultadoTodo);
+
+function sumarTodo() {
+    let suma = 0;
+    for(let i = 0; i < arguments.length; i++) {
+        suma += arguments[i];
+    }
+    return suma;
+}
