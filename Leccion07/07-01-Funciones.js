@@ -29,3 +29,8 @@ console.log(typeof miFuncion1);
 
 var miFuncionTexto = miFuncion1.toString();
 console.log(miFuncionTexto);
+
+// Función tipo flecha
+const sumarFuncionTipoFlecha = (a,b) => a+b;
+resultado = sumarFuncionTipoFlecha(3,5);
+console.log(resultado);
