@@ -19,3 +19,12 @@ for(let contador2 = 0; contador2 <= 10; contador2++) {
     console.log(contador2);
 }
 console.log("Fin del ciclo for para imprimir numeros pares y validación para los impares (con continue)");
+
+inicio:
+for(let contador3 = 0; contador3 <= 10; contador3++) {
+    if(contador3 % 2 != 0) {
+        continue inicio;
+    }
+    console.log(contador3);
+}
+console.log("Fin del ciclo for para imprimir numeros pares y validación para los impares (con continue) y volver a etiquetas");
