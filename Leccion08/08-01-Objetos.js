@@ -39,3 +39,17 @@ console.log(persona);
 
 delete persona.tel; // Eliminar propiedad
 console.log(persona);
+
+// Imprimir objetos en web
+// concatenar
+console.log(persona.nombre + ", " + persona.apellido)
+// for in
+for(nombreProiedad in persona) {
+    console.log(persona[nombreProiedad]);
+}
+// array
+let personaArray = Object.values(persona);
+console.log(personaArray);
+// cadena JSON
+let personaString = JSON.stringify(persona);
+console.log(personaString);
