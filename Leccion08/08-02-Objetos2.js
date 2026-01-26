@@ -33,10 +33,20 @@ console.log(persona.lang);
 
 let padre = new Persona('Juan', 'Perez', 'juan@gmail.com');
 console.log(padre);
+console.log(padre.tel);
 
 
 let madre = new Persona('Juana', 'Perez', 'juanitaperez@gmail.com');
 console.log(madre);
+console.log(madre.tel);
+
+Persona.prototype.tel = '44332211'; // metodo prototype y valor por default
+console.log(padre.tel);
+console.log(madre.tel);
+
+padre.tel = '3004669565';
+console.log(padre.tel);
+console.log(madre.tel);
 
 padre.nombre = 'Carlos';
 console.log(padre);
