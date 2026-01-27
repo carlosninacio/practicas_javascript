@@ -25,3 +25,5 @@ console.log(persona1.nombre)
 
 let persona2 = new Persona('Pedro', 'Sanchez');
 console.log(persona2);
+
+let persona3 = new Persona('Karen', 'Ordonez');
