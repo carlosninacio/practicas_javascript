@@ -1,11 +1,19 @@
 class Persona {
 
     static contadorObjetosPersona = 0; // atributo de clase
+    
+    static get MAX_OBJ() {
+        return 5;
+    }
 
     email = 'Valor por defecto email'; // atributo de  objetos
 
     constructor(nombre, apellido) {
-        this.idPersona = ++Persona.contadorObjetosPersona; // Para acceder a atributos estaticos usar la clase, no 'this.'
+        if(Persona.contadorObjetosPersona < Persona.MAX_OBJ) {
+            this.idPersona = ++Persona.contadorObjetosPersona; // Para acceder a atributos estaticos usar la clase, no 'this.'
+        } else {
+            console.log('Se han superado el maximo de objetos permitidos')
+        }
         this._nombre = nombre;
         this._apellido = apellido;
         console.log('Se incrementa contador a:' + Persona.contadorObjetosPersona);
@@ -103,3 +111,15 @@ console.log(Empleado.email); // Es un nuevo atributo estatico, no es el que se d
 let persona2 = new Persona('Sammy', 'Ramirez');
 console.log(persona2.toString());
 console.log(Persona.contadorObjetosPersona);
+
+console.log(Persona.MAX_OBJ);
+
+let persona3 = new Persona('Eva', 'Ramirez');
+let persona4 = new Persona('Lola', 'Ramirez');
+let persona5 = new Persona('Kiwi', 'Perez');
+let persona6 = new Persona('Tony', 'Perez');
+
+console.log(persona3.toString());
+console.log(persona4.toString());
+console.log(persona5.toString());
+console.log(persona6.toString());
