@@ -1,9 +1,12 @@
-// HERENCIA EN JAVASCRIPT
-
 class Persona {
+
+    static contadorObjetosPersona = 0;
+
     constructor(nombre, apellido) {
+        Persona.contadorObjetosPersona++; // Para acceder a atributos estaticos usar la clase, no 'this.'
         this._nombre = nombre;
         this._apellido = apellido;
+        console.log('Se incrementa contador a:' + Persona.contadorObjetosPersona);
     }
 
     get nombre() {
@@ -84,3 +87,8 @@ Persona.saludar2(persona1);
 // Se pueden ejecutar metodos estaticos desde clases hijas
 Empleado.saludar();
 Empleado.saludar2(empleado1);
+
+// ATRIBUTOS ESTATICOS. SOLO SE PUEDEN ACCEDER DESDE LA CLASE, NO LOS OBJETOS
+console.log(persona1.contadorObjetosPersona); // esto no es la variable estatica
+console.log(Persona.contadorObjetosPersona);
+console.log(Empleado.contadorObjetosPersona);
