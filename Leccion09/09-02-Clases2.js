@@ -31,6 +31,14 @@ class Persona {
         // Se aplica poliformismo
         return this.nombreCompleto();
     }
+
+    static saludar() {
+        console.log('Saludos desde metodo estatico');
+    }
+
+    static saludar2(persona) {
+        console.log('Saludos ' + persona.nombre + ' ' + persona.apellido);
+    }
 }
 
 class Empleado extends Persona {
@@ -62,4 +70,17 @@ console.log(empleado1);
 console.log(empleado1.nombre);
 console.log(empleado1.departamento);
 console.log(empleado1.nombreCompleto());
-console.log(empleado1.toString())
+console.log(empleado1.toString());
+
+/*
+persona1.saludar();
+Los metodos estaticos se asocian con la clase, no con los objetos
+*/
+Persona.saludar();
+
+// Se puede enviar el objeto como parametro
+Persona.saludar2(persona1);
+
+// Se pueden ejecutar metodos estaticos desde clases hijas
+Empleado.saludar();
+Empleado.saludar2(empleado1);
