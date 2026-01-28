@@ -1,9 +1,11 @@
 class Persona {
 
-    static contadorObjetosPersona = 0;
+    static contadorObjetosPersona = 0; // atributo de clase
+
+    email = 'Valor por defecto email'; // atributo de  objetos
 
     constructor(nombre, apellido) {
-        Persona.contadorObjetosPersona++; // Para acceder a atributos estaticos usar la clase, no 'this.'
+        this.idPersona = ++Persona.contadorObjetosPersona; // Para acceder a atributos estaticos usar la clase, no 'this.'
         this._nombre = nombre;
         this._apellido = apellido;
         console.log('Se incrementa contador a:' + Persona.contadorObjetosPersona);
@@ -26,7 +28,7 @@ class Persona {
     }
 
     nombreCompleto() {
-        return this._nombre + ' ' + this._apellido;
+        return this.idPersona + ' ' + this._nombre + ' ' + this._apellido;
     }
 
     // Sobreescribiendo el metodo de la clase padre Object
@@ -92,3 +94,12 @@ Empleado.saludar2(empleado1);
 console.log(persona1.contadorObjetosPersona); // esto no es la variable estatica
 console.log(Persona.contadorObjetosPersona);
 console.log(Empleado.contadorObjetosPersona);
+
+console.log(persona1.email);
+console.log(empleado1.email);
+console.log(Persona.email); // Es un nuevo atributo estatico, no es el que se definió
+console.log(Empleado.email); // Es un nuevo atributo estatico, no es el que se definió
+
+let persona2 = new Persona('Sammy', 'Ramirez');
+console.log(persona2.toString());
+console.log(Persona.contadorObjetosPersona);
