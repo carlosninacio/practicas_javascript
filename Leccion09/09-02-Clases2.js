@@ -25,6 +25,12 @@ class Persona {
     nombreCompleto() {
         return this._nombre + ' ' + this._apellido;
     }
+
+    // Sobreescribiendo el metodo de la clase padre Object
+    toString() {
+        // Se aplica poliformismo
+        return this.nombreCompleto();
+    }
 }
 
 class Empleado extends Persona {
@@ -49,9 +55,11 @@ class Empleado extends Persona {
 
 let persona1 = new Persona('Carlos', 'Ramirez');
 console.log(persona1);
+console.log(persona1.toString());
 
 let empleado1 = new Empleado('Karen','Ordonez', 'Salud');
 console.log(empleado1);
 console.log(empleado1.nombre);
 console.log(empleado1.departamento);
 console.log(empleado1.nombreCompleto());
+console.log(empleado1.toString())
