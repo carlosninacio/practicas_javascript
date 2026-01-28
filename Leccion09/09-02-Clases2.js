@@ -21,6 +21,10 @@ class Persona {
     set apellido(apellido) {
         this._apellido = apellido;
     }
+
+    nombreCompleto() {
+        return this._nombre + ' ' + this._apellido;
+    }
 }
 
 class Empleado extends Persona {
@@ -36,6 +40,11 @@ class Empleado extends Persona {
     set departamento(departamento) {
         this._departamento = departamento;
     }
+
+    // Sobreescritura (modificar comportamiento del metodo de la clase padre)
+    nombreCompleto() {
+        return super.nombreCompleto() + ', ' + this._departamento;
+    }
 }
 
 let persona1 = new Persona('Carlos', 'Ramirez');
@@ -45,3 +54,4 @@ let empleado1 = new Empleado('Karen','Ordonez', 'Salud');
 console.log(empleado1);
 console.log(empleado1.nombre);
 console.log(empleado1.departamento);
+console.log(empleado1.nombreCompleto());
