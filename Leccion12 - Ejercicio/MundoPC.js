@@ -73,6 +73,10 @@ class Monitor {
     }
 }
 
+class Computadora {
+    static contadorComputadoras = 0;
+}
+
 let raton1 = new Raton('USB', 'HP')
 console.log(raton1.toString());
 let raton2 = new Raton('Bluetooth', 'Dell');
