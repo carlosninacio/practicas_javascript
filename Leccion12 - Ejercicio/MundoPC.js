@@ -75,6 +75,18 @@ class Monitor {
 
 class Computadora {
     static contadorComputadoras = 0;
+
+    constructor(nombre, monitor, raton, teclado) {
+        this._idComputadora = ++Computadora.contadorComputadoras;
+        this._nombre = nombre;
+        this._monitor = monitor;
+        this._raton = raton;
+        this._teclado = teclado;
+    }
+
+    toString() {
+        return `Computadora ${this._idComputadora}: ${this._nombre} \n${this._monitor} \n${this._raton} \n${this._teclado}`;
+    }
 }
 
 let raton1 = new Raton('USB', 'HP')
@@ -93,3 +105,9 @@ let monitor1 = new Monitor('Samsung', 27);
 let monitor2 = new Monitor('LG', 23);
 console.log(monitor1.toString());
 console.log(monitor2.toString());
+
+let computadora1 = new Computadora('HP', monitor1, raton1, teclado1);
+console.log(computadora1.toString());
+console.log(`${computadora1}`);
+let computadora2 = new Computadora('Armada', monitor2, raton2, teclado2);
+console.log(`${computadora2}`);
