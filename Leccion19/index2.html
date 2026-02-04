@@ -5,8 +5,10 @@
     <title>Manejo DOM con JavaScript</title>
 </head>
 <body>
-    <h1>Manejo DOM con JS</h1>
+    <h1 id="titulo">Manejo DOM con JS</h1>
     <button onclick="mostrar()">Mostrar</button>
+    <br/>
+    <button onclick="cambiar()">Cambiar texto</button>
     <br/>
     <script>
         document.write('Saludos desde JS');
@@ -14,6 +16,12 @@
         function mostrar() {
             document.write('Adios'); // Usar document.write después de cargado el documento sobreescribe todo
         }
+
+        function cambiar() {
+            document.getElementById('titulo').innerHTML = 'Nuevo Titulo';
+            //document.getElementById('titulo').innerHTML += '<br/>Nuevo Titulo';
+        }
+
     </script>
 </body>
 </html>
