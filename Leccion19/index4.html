@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Eventos con JS</title>
+</head>
+<body>
+    <h1 id="titulo">Titulo H1</h1>
+    <br/>
+    <!-- Nombre: <input type="text" onfocus="cambiar(this)" onblur="regresar(this)"/>
+    <br/><br/>
+    Apelido: <input type="text" onfocus="cambiar(this)" onblur="regresar(this)"/> -->
+
+    Nombre: <input type="text" id="nombre"/>
+    <br/><br/>
+    Apellido: <input type="text" id="apellido"/>
+
+    <script>
+        function cambiar(elementoInput) {
+            elementoInput.style.background = 'yellow';
+        }
+
+        function regresar(elementoInput) {
+            elementoInput.style.background = 'white';
+        }
+
+        document.getElementById('nombre').addEventListener('focus', cambiar);
+        function cambiar(evento) {
+            let componente = evento.target;
+            componente.style.background = 'yellow';
+        }
+
+        document.getElementById('nombre').addEventListener('blur', regresar);
+        function regresar(evento) {
+            let componente = evento.target;
+            componente.style.background = 'white';
+        }
+
+        document.getElementById('apellido').addEventListener('focus', cambiar);
+        function cambiar(evento) {
+            let componente = evento.target;
+            componente.style.background = 'yellow';
+        }
+
+        document.getElementById('apellido').addEventListener('blur', regresar);
+        function regresar(evento) {
+            let componente = evento.target;
+            componente.style.background = 'white';
+        }
+
+    </script>
+</body>
+</html>
