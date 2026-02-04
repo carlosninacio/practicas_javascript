@@ -38,6 +38,13 @@
     for(let i=0; i<parrafosEstilo.length; i++) {
         console.log(`i:${i} - ${parrafosEstilo[i].innerHTML}`)
     }
+
+    //querySelectorAll - Otro metodo para obtener por estilos y tipo de elemento HTML
+    let elementos = document.querySelectorAll('p.azul');
+    console.log(`No. elementos (parrafos con className azul): ${elementos.length}`);
+    for (let elemento of elementos) {
+        console.log(`${elemento.innerHTML}`)
+    }
 </script>
 
 </body>
