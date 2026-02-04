@@ -6,13 +6,21 @@
 </head>
 <body>
     <h1 onclick="cambiarTexto(this)">Manejo DOM con JS</h1>
+    <h1 id="titulo">Titulo para agregar con JS</h1>
     <br/>
+    <div id="mostrar"></div>
     <script>
         function cambiarTexto(titulo) {
             console.log(titulo);
             console.log(titulo.innerHTML);
             titulo.innerHTML = 'Nuevo título';
             console.log(titulo.innerHTML);
+        }
+
+        document.getElementById('titulo').onclick = cambiarTexto2;
+
+        function cambiarTexto2() {
+            document.getElementById('mostrar').innerHTML = 'Nuevo Contenido';
         }
     </script>
 </body>
