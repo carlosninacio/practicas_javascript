@@ -31,3 +31,10 @@ setTimeout(miFuncionCallback, 3000);
 setTimeout(function(){console.log('Saludo asíncrono 2')}, 4000);
 
 setTimeout(() => console.log('Saludo asincrono 3'), 1000);
+
+let reloj = () => {
+    let fecha = new Date();
+    console.log(`${fecha.getHours()}:${fecha.getMinutes()}:${fecha.getSeconds()}`);
+}
+
+setInterval(reloj,2000); // 2 segundos
