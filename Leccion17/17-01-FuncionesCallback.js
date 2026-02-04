@@ -11,7 +11,7 @@ miFuncion1();
 miFuncion2();
 
 // Función de tipo callback
-function imprimir(mensaje) {
+let imp = function imprimir(mensaje) {
     console.log(mensaje);
 }
 
@@ -20,4 +20,14 @@ function sumar(op1, op2, funcionCallback) {
     funcionCallback(`Resultado: ${resultado}`);
 }
 
-sumar(5,3,imprimir);
+sumar(5,3,imp);
+
+// Llamadas asíncronas con uso setTimeout
+function miFuncionCallback() {
+    console.log('Saludo asíncrono depués de 3 seg.')
+}
+
+setTimeout(miFuncionCallback, 3000);
+setTimeout(function(){console.log('Saludo asíncrono 2')}, 4000);
+
+setTimeout(() => console.log('Saludo asincrono 3'), 1000);
