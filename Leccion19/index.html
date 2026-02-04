@@ -7,13 +7,22 @@
 <body>
     <h1 id="cabecero">Ejemplo DOM con JS</h1>
     <p id="parrafo">Saludos</p>
-
+    <p id="parrafo1">Otro parrafo 1</p>
+    <p id="parrafo2">Otro parrafo 2</p>
 <script>
     let cabecero = document.getElementById('cabecero');
     console.log('valor cabecero: ' + cabecero.innerHTML);
     let parrafo = document.getElementById('parrafo').innerHTML;
-    console.log('valor parrafo: ' + parrafo)
+    console.log(`valor parrafo: ${parrafo}`)
     console.log('Saludos desde JavaScript');
+    //cabecero.innerHTML = 'Nuevo valor del H1';
+
+    let parrafos = document.getElementsByTagName('p');
+    console.log(`Numero de párrafos: ${parrafos.length}`)
+
+    for (let i=0; i<parrafos.length; i++) {
+        console.log(`i:${i} - ${parrafos[i].innerHTML}`);
+    }
 </script>
 
 </body>
