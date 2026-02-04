@@ -24,28 +24,25 @@
             elementoInput.style.background = 'white';
         }
 
-        document.getElementById('nombre').addEventListener('focus', cambiar);
-        function cambiar(evento) {
-            let componente = evento.target;
-            componente.style.background = 'yellow';
-        }
-
-        document.getElementById('nombre').addEventListener('blur', regresar);
-        function regresar(evento) {
-            let componente = evento.target;
-            componente.style.background = 'white';
-        }
+        // Con las funciones flecha no se pueden reutilizar
+        document.getElementById('nombre').addEventListener('focus', (evento) => {
+            evento.target.style.background = 'pink';
+        });
+        document.getElementById('nombre').addEventListener('blur', (evento) => {
+            evento.target.style.background = ''
+        });
 
         document.getElementById('apellido').addEventListener('focus', cambiar);
-        function cambiar(evento) {
-            let componente = evento.target;
-            componente.style.background = 'yellow';
-        }
-
         document.getElementById('apellido').addEventListener('blur', regresar);
+
         function regresar(evento) {
             let componente = evento.target;
             componente.style.background = 'white';
+        }
+
+                function cambiar(evento) {
+            let componente = evento.target;
+            componente.style.background = 'yellow';
         }
 
     </script>
