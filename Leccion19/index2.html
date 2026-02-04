@@ -10,8 +10,13 @@
     <br/>
     <button onclick="cambiar()">Cambiar texto</button>
     <br/>
+    <img id='imagen' src="http://globalmentoring.com.mx/imagenes/javascript.png"/>
+    <br/>
+    <button onclick="cambiarImagen()">Cambiar imagen</button>
+    <br/>
+    <button onclick="cambiarEstilo()">Cambiar Estilo</button>
     <script>
-        document.write('Saludos desde JS');
+        document.write('<br/>Saludos desde JS');
 
         function mostrar() {
             document.write('Adios'); // Usar document.write después de cargado el documento sobreescribe todo
@@ -20,6 +25,14 @@
         function cambiar() {
             document.getElementById('titulo').innerHTML = 'Nuevo Titulo';
             //document.getElementById('titulo').innerHTML += '<br/>Nuevo Titulo';
+        }
+
+        function cambiarImagen() {
+            document.getElementById('imagen').src = "http://globalmentoring.com.mx/imagenes/html5.png";
+        }
+
+        function cambiarEstilo() {
+            document.getElementById('titulo').style.color = 'red';
         }
 
     </script>
