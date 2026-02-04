@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Manejo DOM con JavaScript</title>
+</head>
+<body>
+    <h1>Manejo DOM con JS</h1>
+    <button onclick="mostrar()">Mostrar</button>
+    <br/>
+    <script>
+        document.write('Saludos desde JS');
+
+        function mostrar() {
+            document.write('Adios'); // Usar document.write después de cargado el documento sobreescribe todo
+        }
+    </script>
+</body>
+</html>
