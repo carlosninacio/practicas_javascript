@@ -63,13 +63,20 @@ const crearIngresoHTML = (ingreso) => {
         <div class="elemento_valor">${formatoMoneda(ingreso.valor)}</div>
             <div class="elemento_eliminar">
                 <button class="elemento_eliminar--btn">
-                    <ion-icon name="close-circle-outline"></ion-icon>
+                    <ion-icon name="close-circle-outline" onclick='eliminarIngreso(${ingreso.idIngreso})'></ion-icon>
                 </button>
             </div>
         </div>
     </div>
     `;
     return ingresoHTML;
+}
+
+const eliminarIngreso = (idIngreso) => {
+    let indiceEliminar = ingresos.findIndex(ingreso => ingreso.idIngreso === idIngreso);
+    ingresos.splice(indiceEliminar, 1);
+    cargarCabecero();
+    cargarIngresos();
 }
 
 const cargarEgresos = () => {
